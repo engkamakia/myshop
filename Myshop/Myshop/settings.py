@@ -141,3 +141,7 @@ MEDIA_ROOT = BASE_DIR / 'media'
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 CART_SESSION_ID = 'cart'
+
+STRIPE_PUBLISHABLE_KEY = '' # Publishable key
+STRIPE_SECRET_KEY = '' # Secret key
+STRIPE_API_VERSION = '2022-08-01'
