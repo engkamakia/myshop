@@ -1,0 +1,16 @@
+{% extends "shop/base.html" %}
+{% load static %}
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-6">
+            <h2 class="text-center text info">Pending Approval</h2>
+            <p class="text-center">
+                Upon payment completion you'll receive an email notification affirming approval <br>{{phone_number}}
+            </p>
+        </div>
+    </div>
+</div>
+
+{% endblock %}

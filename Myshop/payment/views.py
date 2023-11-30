@@ -30,7 +30,7 @@ def initiate_stk_push(request, ph_number,total_amount):
             amount = total_amount
             phone = ph_number
             process_request_url = 'https://sandbox.safaricom.co.ke/mpesa/stkpush/v1/processrequest'
-            callback_url = 'https://kariukijames.com/pesa/callback.php'
+            callback_url = 'https://mydomain.com/pat'
             passkey = settings.MPESA_PASSKEY
             business_short_code = '174379'
             timestamp = datetime.now().strftime('%Y%m%d%H%M%S')
@@ -38,7 +38,7 @@ def initiate_stk_push(request, ph_number,total_amount):
             party_a = phone
             party_b = '254708374149'
             account_reference = 'George-Gadgets'
-            transaction_desc = 'stkpush test'
+            transaction_desc = f'Do you want to pay {amount} kshs to account {account_reference}?'
             stk_push_headers = {
                 'Content-Type': 'application/json',
                 'Authorization': 'Bearer ' + access_token
@@ -104,10 +104,10 @@ def payment (request):
 
         initiate_stk_push(request, ph_number,total_amount)
 
-        return render (request,'success.html')
+        return render (request,'payment/success.html')
         # return HttpResponse(f'Stk Push for {phone_number}')
     
-    return render (request,'payment.html', {'title': 'Payment'})
+    return render (request,'payment/payment.html', {'title': 'Payment'})
     
     
 def process_stk_callback(request):

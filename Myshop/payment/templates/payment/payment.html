@@ -10,18 +10,11 @@
             <p><a href="/">Back</a></p>
             <form action="{% url 'payment:payment' %}" method="POST">
                 {% csrf_token %}
-                <div class="col-md-5">
-                    <input style="border-radius: 0;" name='fname' class="form-control" type="text" id="example-email-input"
-                    required placeholder="Your Name">
-                </div><br>
+                
                 <div class="col-md-5">
                     <input style="border-radius: 0;" name='phone_number' class="form-control" type="tel" required
-                    placeholder="+254xx-xxx-xxx">
-                </div><br>
-                <div class="col-md-5">
-                    <input style="border-radius: 0;" name='amount' class="form-control" type="number" required
-                    placeholder="amount">
-                </div><br>
+                    placeholder="0xxx-xxx-xxx">
+                
                 <div class="col-md-5">
                     <button style="border-radius: 0;" type="submit" class="btn btn-dark">
                         LIPA NA MPESA 
